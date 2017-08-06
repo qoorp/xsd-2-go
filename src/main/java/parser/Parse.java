@@ -219,9 +219,9 @@ public class Parse {
 	public String parseStructName(Class cls) {
 		// Struct name
 		String structName = Util.genGoStructName(cls.getName(), this.pkg);
-		this.println("struct name: " + "XML" + structName);
+		this.println("struct name: " + structName);
 
-		this.buffer.append(Util.formatGoStructHeader("XML" + structName));
+		this.buffer.append(Util.formatGoStructHeader(structName));
 		this.symbolTable.setJavaClassName(cls.getName());
 		this.symbolTable.setGOStructName(structName);
 

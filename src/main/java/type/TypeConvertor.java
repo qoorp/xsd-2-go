@@ -61,14 +61,18 @@ public class TypeConvertor {
 			return goType;
 		}
 		
-		return null;
+		return goType;
 	}
 
 	String removePkg(String t) {
 		String prefix = this.packageName + ".";
 		return t.startsWith(prefix) ?
 				t.replaceFirst(prefix, "") :
-				t;
+				take_last2(t);
+	}
+	String take_last2(String t) {
+		String[] parts = t.split("\\.");
+		return parts[parts.length-2]+"."+parts[parts.length-1];
 	}
 
 	public void setClassNameTable(Set<String> t) {

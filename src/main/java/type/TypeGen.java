@@ -76,7 +76,7 @@ public class TypeGen {
 			}
 
 			// struct type
-			return "[]" + "XML" + goType;
+			return "[]" + goType;
 		}
 
 		// Field is Struct
@@ -87,7 +87,7 @@ public class TypeGen {
 			System.exit(0);
 		}
 
-		return "*" + "XML" + goType;
+		return "*" + goType;
 	}
 
 	public String typeOf(XmlElement element, JaxbFactory jaxbFactory) {
@@ -103,7 +103,7 @@ public class TypeGen {
 		String goType = this.typeConvertor.getGoType(refType);
 		if (goType != null) {
 			
-			return "[]" + "XML" + goType;
+			return "[]" + goType;
 		}
 
 		// jaxb type
@@ -119,7 +119,7 @@ public class TypeGen {
 				return goType;
 			}
 
-			return "[]" + "XML" + goType;
+			return "[]" + goType;
 		}
 
 		System.err.println("can not map to Go type: " + refType);
@@ -138,7 +138,7 @@ public class TypeGen {
 		// struct type
 		String goType = this.typeConvertor.getGoType(refType);
 		if (goType != null) {
-			return "[]" + "XML" + goType;
+			return "[]" + goType;
 		}
 
 		// jaxb type
@@ -156,10 +156,10 @@ public class TypeGen {
 
 			// recursive definition
 			if (ctx.isRecursive(goType)) {
-				return "[]" + "XML" + goType;
+				return "[]" + goType;
 			}
 
-			return "*" + "XML" + goType;
+			return "*" + goType;
 		}
 
 		System.err.println("can not map to Go Type: " + ref.type());
