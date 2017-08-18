@@ -16,7 +16,7 @@ This incarnation of xsd-2-go will handle multi-class XSD structures, provided th
 It will not add 'XML' first to all Go types. Keep an eye on types you want exported.
 
 3. Usage
-
+```
 cd XSD_top_directory/..
 xjc XSD_top_directory
 Take note of the new Java source directory (ex: se/)
@@ -27,7 +27,7 @@ mvn compile
 cd xsd-2-go/target/classes/
 jar cfe x2g.jar main.Start .
 XSD_top_directory/script/run.sh se
-
+```
 That will create lots of directories in $GOPATH/src/tmp/, each with a struct.go file.
 Now comes the tedious part. Copy the directory you need (with the struct.go file) to
 the right place in your GOPATH. Try to build it. Copy directories that are missing. Etc.
