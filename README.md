@@ -26,7 +26,7 @@ cd xsd-2-go
 mvn compile
 cd xsd-2-go/target/classes/
 jar cfe x2g.jar main.Start .
-XSD_top_directory/script/run.sh se
+xsd-2-go/script/run.sh se
 ```
 That will create lots of directories in $GOPATH/src/tmp/, each with a struct.go file.
 Now comes the tedious part. Copy the directory you need (with the struct.go file) to
