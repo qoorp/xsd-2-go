@@ -13,7 +13,10 @@ This tool is written in Java.
 
 Original xsd-2-go only seemed to handle one class. Refering to a type in another class made it stop.
 This incarnation of xsd-2-go will handle multi-class XSD structures, provided the Java classes are unique in the last level. Ex: aktiekapital.aktiekapital_200 and aktiekapital.aktiekapital_210 is okay.
-It will not add 'XML' first to all Go types. Keep an eye on types you want exported.
+kalle.atype and gustav.atype is not.
+
+The original would add 'XML' first to all Go types. This will not add.
+Keep an eye on types you want exported.
 
 3. Usage
 ```
@@ -28,7 +31,8 @@ cd xsd-2-go/target/classes/
 jar cfe x2g.jar main.Start .
 xsd-2-go/script/run.sh se
 ```
-That will create lots of directories in $GOPATH/src/tmp/, each with a struct.go file.
-Now comes the tedious part. Copy the directory you need (with the struct.go file) to
-the right place in your GOPATH. Try to build it. Copy directories that are missing. Etc.
-All struct.go files have an import of datatype/. This is where you can put missing types.
+That will create lots of directories in $GOPATH/src/tmp/, each with a Go file.
+Now comes the tedious part. Copy the directory you need (with the Go file) to
+the right place in your GOPATH. Try to build it. Copy directories from
+$GOPATH/src/tmp/ that are missing. Etc.
+All Go files have an import of datatype/. Here you can put missing types.

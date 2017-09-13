@@ -23,7 +23,7 @@ for d in $DS ; do
 	c=$(echo $d | tr '/' '.')
 	t=$TARGET/$last
 	mkdir -p $t
-	f=$t/struct.go
+	f=$t/$last.go
 	header $last > $f
 	java -jar x2g.jar $d $c >> $f
 done
